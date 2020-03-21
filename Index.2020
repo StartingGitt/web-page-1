@@ -37,6 +37,7 @@
             html{
                 font-family:"Montserrat", Arial, Helvetica, sans-serif;
                 scroll-behavior: var(--scroll);
+                background-color: rgb(0,0,0,);
             }
 
             *,
