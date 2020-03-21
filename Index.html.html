@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="mememe">
+    <meta name="description" content="nothing of substance">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <title>New Document</title>
+            <style type="text/css">
+
+    @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+
+            :root{
+                --link-color:rgb(64, 68, 71);
+                --link-background:lightblue;
+                --font-color:#000;
+                --font-size:1.2em;
+                --padding:25px;
+                --nav-padding:5px 15px;
+                --scroll:smooth;
+                --form-width:100%;
+                --form-padding:5px;
+                --form-margin:5px;
+/*===================rainbow colors==========================================*/
+                --red-clr:red;
+                --orange-clr:orange;
+                --yellow-clr:yellow;
+                --green-clr:green;
+                --blue-clr:blue;
+                --indigo-clr:indigo;
+                --violet-clr:violet;
+            }
+/*===================rainbow colors==========================================*/
+            html{
+                font-family:"Montserrat", Arial, Helvetica, sans-serif;
+                scroll-behavior: var(--scroll);
+            }
+
+            *,
+            *::before,
+            *::after{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            .wrapper{
+                width:100%;
+                max-width:1650px;
+                margin-left:auto;
+                margin-right:auto;
+            }
+
+            .main_header{
+                background-color: #000;
+                padding:var(--padding);
+                display: flex;
+                justify-content:space-between;
+            }
+
+            .main_header_logo{
+                color: #fff;
+                font-family: Helvetica,sans-serif;
+                letter-spacing: 3px;
+                margin-left: 25px;
+                font-style: italic;
+            }
+
+            .main_header_ul{
+                display:flex;
+                list-style-type: none;
+            }
+
+            .main_header_item{
+                display: inline-block;
+                margin: 0 15px;
+                padding: var(--nav-padding);
+                text-decoration: none;
+                color: #000;
+                background-color: lightgrey;
+                border-radius: 15px;
+                transition: 100ms all ease-in-out;
+            }
+
+/*=========================================================================*/
+            .dropdown{
+              width: 170px;
+              text-align: center;
+              position: relative;
+            }
+
+             ul.dropdown_menu{
+               position: absolute;
+               background-color: #000;
+               width: 12%;
+               border-radius: 15px 15px 40px 40px;
+               transform: scaleY(0);
+               transform-origin: top;
+               transition: 300ms all ease-in-out;
+               transition-delay: 40ms;
+            }
+
+            li.drop:hover ul.dropdown_menu{
+              transform: scaleY(1);
+              transition: 300ms all ease-in-out;
+              transition-delay: 0s;
+            }
+
+            ul.dropdown_menu li{
+              list-style-type: none;
+
+            }
+
+            .dropdown_item{
+              text-align:center;
+              color: #fff;
+              display: inline-block;
+              padding: 10px 5px;
+              width: 100%;
+            }
+
+            .dropdown_item:hover{
+              background-color: gray;
+            }
+/*=========================================================================*/
+            .main_header_item:hover{
+                transform: scale(1.1);
+            }
+
+            .main{
+                display: flex;
+                flex-wrap:wrap;
+                justify-content: center;
+                align-items: center;
+                padding-bottom: 20px;
+            }
+
+            .main_article{
+                padding: 15px;
+                width: 30%;
+            }
+
+            .main_article_p{
+                line-height: 1.8;
+                padding-bottom: 15px;
+            }
+
+            .main_article_header{
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .main_article_buttons{
+
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .main_article_button{
+                display: inline-block;
+                width: 45%;
+                height: 35px;
+                border-radius: 15px;
+                transition: 100ms all ease-in-out;
+                cursor: pointer;
+            }
+
+            .main_article_button:hover{
+                box-shadow: 2px 2px 15px rgb(0,0,0,.3);
+            }
+
+            a{
+                text-decoration: none;
+                color: #000;
+                font-style: italic;
+            }
+
+            .main_footer{
+                background-color: #000;
+                display: flex;
+                justify-content: space-around;
+                padding: 25px;
+            }
+
+            .info{
+                color: #fff;
+            }
+
+            .contact{
+                color: #fff;
+            }
+
+            .article_span{
+                color:orange;
+                font-weight:1200;
+                cursor: pointer;
+            }
+
+            .article_span:hover{
+                border-bottom:2px solid orange;
+            }
+
+            .sorry{
+              background-color: #cecece;
+              width: 50%;
+              height: 50%;
+              position: absolute;
+              top: 45%;
+              left: 25%;
+              display: flex;
+              flex-flow: column nowrap;
+              justify-content: center;
+              align-items: center;
+              box-shadow: 0 0 1500px 1500px rgba(0,0,0,0.6);
+              transform: scale(0) translateZ(0);
+              border: 3px solid red;
+              transition: 400ms all ease-in-out;
+            }
+
+            /* :target{
+              transform: scale(1);
+            } */
+
+            .sorry h1{
+              padding: 15px 0;
+              text-align: center;
+            }
+
+            .sorry p{
+              line-height: 1.9;
+              text-align: center;
+              height: 50%;
+              display: flex;
+              align-items: center;
+              justify-content:center;
+            }
+
+            .sorry a{
+              display: inline-block;
+              text-align: center;
+              margin-left: 350px;
+              border:1px solid black;
+              padding: 10px 13px;
+              background-color: var(--link-background);
+              border-radius: 15px;
+              transition: 100ms all ease-in-out;
+            }
+
+            .sorry a:hover{
+              background-color: steelblue;
+              transform: scale(1.1);
+            }
+
+            .buying{
+              background-color: #cecece;
+              width: 50%;
+              height: 50%;
+              position: absolute;
+              top: 45%;
+              left: 25%;
+              display: flex;
+              flex-flow: column nowrap;
+              justify-content: center;
+              align-items: center;
+              box-shadow: 0 0 1500px 1500px rgba(0,0,0,0.6);
+              transform: scale(0) translateZ(0);
+              border: 3px solid red;
+              transition: 400ms all ease-in-out;
+            }
+
+            :target{
+              transform: scale(1);
+            }
+
+            input[name="FirstName"]{
+              width: var(--form-width);
+              padding:var(--form-padding);
+              margin: var(--form-margin);
+              font-family: "Montserrat", Arial,sans-serif;
+              outline: 3px solid #cecece;
+            }
+
+            input[name="SecondName"]{
+              width: var(--form-width);
+              padding:var(--form-padding);
+              margin: var(--form-margin);
+              font-family: "Montserrat", Arial,sans-serif;
+              border:none;
+              outline: 3px solid #cecece;
+            }
+
+            input[name="EmailField"]{
+              width: var(--form-width);
+              padding:var(--form-padding);
+              margin: var(--form-margin);
+              margin-bottom: 15px;
+              font-family: "Montserrat", Arial,sans-serif;
+              border:none;
+            }
+
+            input:focus{
+              box-shadow: 0 0 15px 15px rgba(0,0,0,.1);
+              outline: 2px solid pink;
+
+            }
+
+            .buying_header{
+              padding: 10px;
+              letter-spacing: 2px;
+            }
+
+            .buying p{
+              padding: var(--form-padding);
+              font-style: italic;
+            }
+
+            .buying_form p{
+              display: flex;
+            }
+
+            .buying_form label{
+              width: 60%;
+              line-height: 40px;
+              font-family: "Montserrat", Arial, Helvetica, sans-serif;
+              font-style: italic;
+            }
+
+            p.thanks{
+              padding: Calc(var(--form-padding) + 15px);
+              font-family: "Montserrat", Arial, Helvetica, sans-serif;
+              font-weight: 900;
+              letter-spacing: 2px;
+            }
+
+            .buying h1{
+              margin-top: -45px;
+            }
+
+            .red{
+              color: var(--red-clr);
+            }
+
+            .orange{
+              color: var(--orange-clr);
+            }
+
+            .yellow{
+              color: var(--yellow-clr);
+            }
+
+            .green{
+              color: var(--green-clr);
+            }
+
+            .blue{
+              color: var(--blue-clr);
+            }
+
+            .indigo{
+              color: var(--indigo-clr);
+            }
+
+            .violet{
+              color: var(--violet-clr);
+            }
+
+            .buying_buttons{
+              width: 70%;
+              display: flex;
+              justify-content: space-between;
+
+            }
+
+            .buying a{
+              display: inline-block;
+              border:1px solid black;
+              padding: 10px 13px;
+              background-color: var(--link-background);
+              border-radius: 15px;
+              transition: 100ms all ease-in-out;
+            }
+
+            .buying a:hover{
+              background-color: steelblue;
+              transform: scale(1.1);
+            }
+
+            .buying a.cancel{
+              margin-left: 50px;
+              border:1px solid black;
+              padding: 10px 65px;
+              background-color: var(--link-background);
+              border-radius: 15px;
+              transition: 100ms all ease-in-out;
+              order: -1;
+            }
+
+            .buying a.cancel:hover{
+              background-color: steelblue;
+              transform: scale(1.1);
+            }
+
+
+
+
+
+
+
+            </style>
+</head>
+<body>
+    <div class="wrapper">
+
+
+    <header class="main_header" id="header">
+        <p class="main_header_logo">MyCompany</p>
+        <nav class="main_header_nav">
+            <ul class="main_header_ul">
+                <li class="drop"><a href="#" class="main_header_item dropdown"><i class="fa fa-bars"></i></a>
+                  <ul class="dropdown_menu">
+                        <li><a href="#" class="dropdown_item">About me</a></li>
+                        <li><a href="#" class="dropdown_item">My business</a></li>
+                        <li><a href="#" class="dropdown_item">What we do</a></li>
+                        <li><a href="#" class="dropdown_item">My country</a></li>
+                        <li><a href="#" class="dropdown_item">My friends</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" class="main_header_item">Gallery &nbsp<i class="fa fa-photo"></i></a></li>
+                <li><a href="#" class="main_header_item">Portfolio &nbsp<i class="fa fa-id-card"></i></a></li>
+                <li><a href="#" class="main_header_item">Contact &nbsp<i class="fa fa-address-book"></i></a></li>
+                <li><a href="#" class="main_header_item">More &nbsp<i class="fa fa-info"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main">
+
+        <article class="main_article">
+            <h1 class="main_article_header">Let's learn Latin</h1>
+            <p class="main_article_p">
+                Curabitur tincidunt <span class="article_span">mi nunc, a egestas orci volutpat in. Mauris rhoncus ex nulla, nec mollis quam convallis vitae. In interdum pulvinar nisi a sollicitudin</span>. Vestibulum porta odio ac sapien pharetra vestibulum. Nunc eu posuere lectus. Duis imperdiet lectus vitae molestie pulvinar. Pellentesque hendrerit libero lobortis velit blandit, eu lacinia justo luctus.
+                Curabitur tincidunt mi nunc, a egestas orci volutpat in. Mauris rhoncus ex nulla, nec mollis quam convallis vitae. In interdum pulvinar nisi a sollicitudin. Vestibulum porta odio ac sapien pharetra vestibulum. Nunc eu posuere lectus.<span class="article_span">Duis imperdiet lectus vitae molestie pulvinar</span>. Pellentesque hendrerit libero lobortis velit blandit, eu lacinia justo luctus.
+            </p>
+        <div class="main_article_buttons">
+            <button class="main_article_button"><a href="#buying" class="main_article_link">Buy course! &nbsp<i class="fa fa-money"></i></a></button>
+            <button class="main_article_button"><a href="#sorry" class="main_article_link">No way!</a></button>
+        </div>
+        </article>
+        <article class="main_article">
+            <h1 class="main_article_header">Let's learn Latin</h1>
+            <p class="main_article_p">
+                Curabitur tincidunt mi nunc, a egestas orci volutpat in. Mauris rhoncus ex nulla, nec mollis quam convallis vitae. In interdum pulvinar nisi a sollicitudin. <span class="article_span">Vestibulum porta odio ac sapien pharetra vestibulum. Nunc eu posuere lectus</span>. Duis imperdiet lectus vitae molestie pulvinar. Pellentesque hendrerit libero lobortis velit blandit, eu lacinia justo luctus.
+                Curabitur tincidunt mi nunc, a egestas orci volutpat in. Mauris rhoncus ex nulla, nec mollis quam convallis vitae. In interdum pulvinar nisi a sollicitudin. Vestibulum porta odio ac sapien pharetra vestibulum. Nunc eu posuere lectus. Duis imperdiet lectus vitae molestie pulvinar. Pellentesque hendrerit libero lobortis velit blandit, eu lacinia justo luctus.
+            </p>
+            <div class="main_article_buttons">
+                <button class="main_article_button"><a href="#buying" class="main_article_link">Buy course! &nbsp<i class="fa fa-money"></i></a></button>
+                <button class="main_article_button"><a href="#sorry" class="main_article_link">No way!</a></button>
+            </div>
+        </article>
+        <article class="main_article">
+            <h1 class="main_article_header">Let's learn Latin</h1>
+            <p class="main_article_p">
+                Curabitur tincidunt mi nunc, a egestas orci volutpat in. Mauris rhoncus ex nulla, nec mollis quam convallis vitae. In interdum pulvinar nisi a sollicitudin. <span class="article_span">Vestibulum porta odio ac sapien pharetra vestibulum</span>. Nunc eu posuere lectus. Duis imperdiet lectus vitae molestie pulvinar. Pellentesque hendrerit libero lobortis velit blandit, eu lacinia justo luctus.
+                Curabitur tincidunt mi nunc, <span class="article_span">a egestas orci volutpat in. Mauris rhoncus ex nulla, nec mollis quam convallis vitae</span>. In interdum pulvinar nisi a sollicitudin. Vestibulum porta odio ac sapien pharetra vestibulum. Nunc eu posuere lectus. Duis imperdiet lectus vitae molestie pulvinar. Pellentesque hendrerit libero lobortis velit blandit, eu lacinia justo luctus.
+            </p>
+            <div class="main_article_buttons">
+                <button class="main_article_button"><a href="#buying" class="main_article_link">Buy course! &nbsp<i class="fa fa-money"></i></a></button>
+                <button class="main_article_button"><a href="#sorry" class="main_article_link">No way!</a></button>
+            </div>
+        </article>
+        <article class="main_article">
+            <h1 class="main_article_header">Let's learn Latin</h1>
+            <p class="main_article_p">
+                Curabitur tincidunt mi nunc, a egestas orci volutpat in. Mauris rhoncus ex nulla, nec mollis quam convallis vitae. <span class="article_span">In interdum pulvinar nisi a sollicitudin. Vestibulum porta odio ac sapien pharetra vestibulum</span>. Nunc eu posuere lectus. Duis imperdiet lectus vitae molestie pulvinar. Pellentesque hendrerit libero lobortis velit blandit, eu lacinia justo luctus.
+                Curabitur tincidunt mi nunc, a egestas orci volutpat in. Mauris rhoncus ex nulla, nec mollis quam convallis vitae. In interdum pulvinar nisi a sollicitudin. <span class="article_span">Vestibulum porta odio ac sapien pharetra vestibulum. Nunc eu posuere lectus</span>. Duis imperdiet lectus vitae molestie pulvinar. Pellentesque hendrerit libero lobortis velit blandit, eu lacinia justo luctus.
+            </p>
+            <div class="main_article_buttons">
+                <button class="main_article_button"><a href="#buying" class="main_article_link">Buy course! &nbsp<i class="fa fa-money"></i></a></button>
+                <button class="main_article_button"><a href="#sorry" class="main_article_link">No way!</a></button>
+            </div>
+        </article>
+        <article class="main_article">
+            <h1 class="main_article_header">Let's learn Latin</h1>
+            <p class="main_article_p">
+                Curabitur tincidunt mi nunc, a egestas orci volutpat in. Mauris rhoncus ex nulla, nec mollis quam convallis vitae. In interdum pulvinar nisi a sollicitudin. <span class="article_span">Vestibulum porta odio ac sapien pharetra vestibulum. Nunc eu posuere lectus</span>. Duis imperdiet lectus vitae molestie pulvinar. Pellentesque hendrerit libero lobortis velit blandit, eu lacinia justo luctus.
+                Curabitur tincidunt mi nunc, a egestas orci volutpat in. Mauris rhoncus ex nulla, <span class="article_span"> nec mollis quam convallis vitae. In interdum pulvinar nisi a sollicitudin</span>. Vestibulum porta odio ac sapien pharetra vestibulum. Nunc eu posuere lectus. Duis imperdiet lectus vitae molestie pulvinar. Pellentesque hendrerit libero lobortis velit blandit, eu lacinia justo luctus.
+            </p>
+            <div class="main_article_buttons">
+                <button class="main_article_button"><a href="#buying" class="main_article_link">Buy course! &nbsp<i class="fa fa-money"></i></a></button>
+                <button class="main_article_button"><a href="#sorry" class="main_article_link">No way!</a></button>
+            </div>
+        </article>
+        <article class="main_article">
+            <h1 class="main_article_header">Let's learn Latin</h1>
+            <p class="main_article_p">
+                Curabitur tincidunt mi nunc, a egestas orci volutpat in. Mauris rhoncus ex nulla, <span class="article_span">nec mollis quam convallis vitae. In interdum pulvinar nisi a sollicitudin. Vestibulum porta odio ac sapien pharetra vestibulum</span>. Nunc eu posuere lectus. Duis imperdiet lectus vitae molestie pulvinar. Pellentesque hendrerit libero lobortis velit blandit, eu lacinia justo luctus.
+                <span class="article_span">Curabitur tincidunt mi nunc, a egestas orci volutpat in. Mauris rhoncus ex nulla</span>, nec mollis quam convallis vitae. In interdum pulvinar nisi a sollicitudin. Vestibulum porta odio ac sapien pharetra vestibulum. Nunc eu posuere lectus. Duis imperdiet lectus vitae molestie pulvinar. Pellentesque hendrerit libero lobortis velit blandit, eu lacinia justo luctus.
+            </p>
+            <div class="main_article_buttons">
+                <button class="main_article_button"><a href="#buying" class="main_article_link">Buy course! &nbsp<i class="fa fa-money"></i></a></button>
+                <button class="main_article_button"><a href="#sorry" class="main_article_link">No way!</a></button>
+            </div>
+        </article>
+    </div>
+
+    <footer class="main_footer">
+        <div class="info">
+            <p>Berlin,<br> Braun Strasse 94,
+                Wohnung 55
+            </p>
+        </div>
+        <div class="contact">
+            <p>Berlin,<br> Braun Strasse 94,
+                Wohnung 55
+            </p>
+        </div>
+    </footer>
+
+    <div class="sorry" id="sorry">
+      <h1>We are sorry that you didn't like our course!</h1>
+      <p>Maybe you should look around and you might find something<br>
+        that you totally like!
+      </p>
+      <a href="#header" class="sorry_button">Understood</a>
+    </div>
+
+                                                                                  <div class="buying" id="buying">
+                                                                                    <h1 class="buying_header">
+                                                                                      <span class="red">S</span><span class="orange">o</span>, <span class="yellow>">y</yellow><span class="green">o</span><span class="blue">u</span> <span class="indigo">a</span><span class="violet">r</span><span class="red">e</span> <span class="orange">f</span><span class="yellow">e</span><span class="green">e</span><span class="blue">l</span><span class="indigo">i</span><span class="violet">n</span><span class="red">g</span> <span class="orange">a</span><span class="yellow">d</span><span class="green">v</span><span class="blue">e</span><span class="indigo">n</span><span class="violet">t</span><span class="red">u</span><span class="orange">r</span><span class="yellow">o</span><span class="green">u</span><span class="blue">s</span> <span class="indigo">!</span></h1>
+                                                                                    <p>To sign up for a course, please fill out the form</p>
+                                                                                    <form class="buying_form">
+                                                                                    <p>
+                                                                                      <label>First name</label>
+                                                                                      <input type="text" name="FirstName" placeholder="Your first name" required>
+                                                                                    </p>
+                                                                                    <p>
+                                                                                      <label>Second Name</label>
+                                                                                      <input type="text" name="SecondName" placeholder="Your second name" required>
+                                                                                    </p>
+                                                                                    <p>
+                                                                                      <label>Your Email</label>
+                                                                                      <input type="text" name="EmailField" placeholder="Your email" reuired>
+                                                                                    </p>
+                                                                                    <p class="thanks">Thank you so much for signing up for our course!</p>
+                                                                                    </form>
+                                                                                    <div class="buying_buttons">
+                                                                                    <a href="https://www.paypal.com/by/home" class="sorry_button">Submit and proceed</a>
+                                                                                    <a href="#header" class="cancel">Cancel</a>
+                                                                                    </div>
+                                                                                  </div>
+
+  </div>
+
+</body>
+</html>
