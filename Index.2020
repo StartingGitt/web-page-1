@@ -32,7 +32,6 @@
                 --blue-clr:blue;
                 --indigo-clr:indigo;
                 --violet-clr:violet;
-                --background-clr:#fdfdfd;
             }
 /*===================rainbow colors==========================================*/
             html{
