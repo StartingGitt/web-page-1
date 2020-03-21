@@ -55,7 +55,7 @@
             }
 
             .main_header{
-                background-color: #000;
+                background-color: black;
                 padding:var(--padding);
                 display: flex;
                 justify-content:space-between;
